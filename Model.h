@@ -5,6 +5,9 @@
 #ifndef RUSH00_MODEL_H
 #define RUSH00_MODEL_H
 
+#include <ncurses.h>
+#include <iostream>
+
 
 #include "Controller.h"
 
@@ -12,6 +15,8 @@ class Model {
 private:
     Controller * controller;
     Viewer * viewer;
+
+    WINDOW*	wnd;
 public:
     Model();
     Model(Controller * controller);
