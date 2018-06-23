@@ -1,0 +1,3 @@
+/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/main.cpp.dir
