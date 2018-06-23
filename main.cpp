@@ -8,6 +8,4 @@ int main()
 {
     Controller controller;
     controller.startGame();
-//    while (42)
-//    {}
 }

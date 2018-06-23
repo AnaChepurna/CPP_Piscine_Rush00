@@ -7,20 +7,24 @@
 
 Viewer::Viewer(): controller(NULL), model(NULL), wnd(initscr()) {
     getmaxyx(wnd, win_y, win_x);
-//    noecho();
-//    keypad(wnd, true);
-//    nodelay(wnd, true);
-//    clear();
-//    refresh();
+    raw();
+    noecho();
+    keypad(wnd, true);
+    curs_set(0);
+    clear();
+    refresh();
+    box(wnd, 0,0);
 }
 
 Viewer::Viewer(Controller *controller): controller(controller), model(NULL), wnd(initscr()) {
     getmaxyx(wnd, win_y, win_x);
-//    //noecho();
-//    keypad(wnd, true);
-//    nodelay(wnd, true);
-//    clear();
-//    refresh();
+    raw();
+    noecho();
+    keypad(wnd, true);
+    curs_set(0);
+    clear();
+    refresh();
+    box(wnd, 0,0);
 }
 
 Viewer::Viewer(Viewer const &src) {
@@ -45,8 +49,10 @@ void Viewer::setModel(Model *v) {
 }
 
 void Viewer::showPreviw() {
-    wprintw(wnd, "Welcome to the game!");
-    getch();
+    wprintw(wnd,  "Welcome to the game!");
+    int c;
+    while (c != '\n' && c != 27)
+        c = wgetch(wnd);
 }
 
 
