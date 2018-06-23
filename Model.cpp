@@ -4,10 +4,10 @@
 
 #include "Model.h"
 
-Model::Model(): controller(NULL), viewer(NULL), wnd(initscr()) {
+Model::Model(): controller(NULL), viewer(NULL) {
 }
 
-Model::Model(Controller *controller): controller(controller), viewer(NULL), wnd(initscr()) {
+Model::Model(Controller *controller): controller(controller), viewer(NULL) {
 }
 
 Model::Model(Model const &src) {
@@ -21,7 +21,7 @@ Model &Model::operator=(Model const &src) {
 }
 
 Model::~Model() {
-    endwin();
+
 }
 
 void Model::setViewer(Viewer *v) {

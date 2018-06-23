@@ -14,6 +14,7 @@ private:
     Model * model;
     Viewer();
 
+    WINDOW*	wnd;
 public:
     Viewer(Controller * controller);
     Viewer(Viewer const& src);

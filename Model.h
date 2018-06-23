@@ -16,9 +16,9 @@ private:
     Controller * controller;
     Viewer * viewer;
 
-    WINDOW*	wnd;
-public:
     Model();
+
+public:
     Model(Controller * controller);
     Model(Model const& src);
     Model &operator=(Model const &src);

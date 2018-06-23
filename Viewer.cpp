@@ -5,10 +5,10 @@
 #include <iostream>
 #include "Viewer.h"
 
-Viewer::Viewer(): controller(NULL), model(NULL) {
+Viewer::Viewer(): controller(NULL), model(NULL), wnd(initscr()) {
 }
 
-Viewer::Viewer(Controller *controller): controller(controller), model(NULL) {
+Viewer::Viewer(Controller *controller): controller(controller), model(NULL), wnd(initscr()) {
 }
 
 Viewer::Viewer(Viewer const &src) {
@@ -22,6 +22,7 @@ Viewer &Viewer::operator=(Viewer const &src) {
 }
 
 Viewer::~Viewer() {
+    endwin();
 }
 
 void Viewer::setModel(Model *v) {
