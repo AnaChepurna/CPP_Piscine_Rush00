@@ -3,6 +3,8 @@
 //
 
 #include "Controller.h"
+#include "Model.h"
+#include "Viewer.h"
 
 Controller::Controller() {
     model = new Model(this);
@@ -24,4 +26,8 @@ Controller &Controller::operator=(Controller const &src) {
 Controller::~Controller() {
     delete model;
     delete viewer;
+}
+
+void Controller::startGame() {
+    viewer->showPreviw();
 }

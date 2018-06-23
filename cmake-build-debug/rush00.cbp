@@ -98,6 +98,9 @@
 		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Viewer.h">
 			<Option target="main.cpp"/>
 		</Unit>
+		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/main.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
 		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

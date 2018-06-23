@@ -6,8 +6,8 @@
 #define RUSH00_CONTROLLER_H
 
 
-#include "Model.h"
-#include "Viewer.h"
+class Model;
+class Viewer;
 
 class Controller {
 private:
@@ -19,6 +19,7 @@ public:
     Controller(Controller const& src);
     Controller &operator=(Controller const &src);
     ~Controller();
+    void startGame();
 };
 
 
