@@ -15,6 +15,7 @@ private:
     Viewer *viewer;
 
     int userEvent;
+    int gameOver;
 public:
     Controller();
     Controller(Controller const& src);
@@ -26,6 +27,10 @@ public:
 
     void controlCharacter();
     void controlEnemies();
+    void clearDeadBodes();
+    void handleClash();
+
+    void endGame();
 };
 
 

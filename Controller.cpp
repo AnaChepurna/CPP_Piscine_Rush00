@@ -13,6 +13,7 @@ Controller::Controller() {
     viewer->setModel(model);
     srand(time(0));
     userEvent = 0;
+    gameOver = 0;
 }
 
 Controller::Controller(Controller const &src) {
@@ -36,13 +37,17 @@ void Controller::startGame() {
 
 void Controller::gameLoop() {
     while (42){
+        if (gameOver)
+            break;
         viewer->showObjects();
         if (userEvent == '\n' || userEvent == 27)
             break;
         controlCharacter();
         controlEnemies();
-        if (rand()%7 / 6)
+        if (rand() % 7 / 6)
             model->pushObject(model->getEnemyEvent()->getEnemy());
+        handleClash();
+        clearDeadBodes();
         usleep(40000);
     }
 }
@@ -84,4 +89,36 @@ void Controller::controlEnemies() {
                 model->deleteObject(ptr);
         }
     }
+}
+
+void Controller::handleClash() {
+    Object *character;
+    Object *ptr;
+    character = model->getNext();
+    while ((ptr = model->getNext()) != NULL)
+    {
+        if (ptr->getY() <= character->getY() && ptr->getY() + ptr->getHeight() <= character->getY())
+            if ((ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX())
+                    || (ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX()))
+                character->takeDamage(*ptr);
+        if (ptr->getY() >= character->getY() && ptr->getY() + ptr->getHeight() >= character->getY())
+            if ((ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX())
+                || (ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX()))
+                character->takeDamage(*ptr);
+    }
+}
+
+void Controller::clearDeadBodes() {
+    if (model->getCharacter()->getHP() <= 0)
+        endGame();
+    Object *ptr;
+    while ((ptr = model->getNext()) != NULL)
+        if (ptr->getHP() <= 0)
+        {
+
+        }
+}
+
+void Controller::endGame() {
+    gameOver = 1;
 }
