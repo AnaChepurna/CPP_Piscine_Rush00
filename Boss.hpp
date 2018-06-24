@@ -13,7 +13,7 @@ private:
     static const int _heigth = 6;
     static const int _weight = 6;
     static const int boss_hp = 5;
-    static std string boss_t = "boss";
+    static std :: string boss_t = "boss";
 
     Boss();
 public:
