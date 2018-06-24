@@ -30,6 +30,7 @@ public:
     int getWinHeight();
     int getWinWidth();
     void showObjects();
+    void showGameOver();
 };
 
 
