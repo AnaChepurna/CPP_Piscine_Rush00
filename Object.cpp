@@ -93,12 +93,12 @@ int		Object :: getY()
 
 void	Object :: move_v(int pos)
 {
-	this->x += pos;
+	this->y += pos;
 }
 
 void 	Object :: move_h(int pos)
 {
-	this->y += pos;
+	this->x += pos;
 }
 
 std::string const Object::getType() {

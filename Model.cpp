@@ -89,7 +89,7 @@ void Model::deleteObject(Object const *c) {
     }
 }
 
-Character const *Model::getCharacter() {
+Character *Model::getCharacter() {
     return (character);
 }
 

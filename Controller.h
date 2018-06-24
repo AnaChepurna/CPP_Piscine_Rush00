@@ -14,12 +14,17 @@ private:
     Model * model;
     Viewer *viewer;
 
+    int userEvent;
 public:
     Controller();
     Controller(Controller const& src);
     Controller &operator=(Controller const &src);
     ~Controller();
     void startGame();
+    void gameLoop();
+    void setUserEvent(int event);
+
+    void controlCharacter();
 };
 
 

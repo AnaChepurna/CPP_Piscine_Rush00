@@ -32,7 +32,7 @@ public:
     Object *getNext();
     void pushObject(Object * o);
     void deleteObject(Object const* c);
-    Character const * getCharacter();
+    Character * getCharacter();
 };
 
 
