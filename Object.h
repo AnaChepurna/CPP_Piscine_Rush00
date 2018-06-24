@@ -6,7 +6,7 @@
 #define RUSH00_OBJECT_H
 
 class Object {
-private:
+protected:
     char **map;
     int width;
     int height;
@@ -15,6 +15,8 @@ private:
 };
 
 class OList {
+private:
+    destroy();
 public:
     Object * obj;
     OList * next;
@@ -22,7 +24,7 @@ public:
     OList();
     OList(OList const& src);
     OList &operator=(OList const& src);
+
     ~OList();
 };
-
 #endif //RUSH00_OBJECT_H
