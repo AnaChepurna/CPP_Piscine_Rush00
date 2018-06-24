@@ -15,7 +15,7 @@ private:
                                     {'@', '@', '@', '@', '@'},
                                     {'@', '@', '@', '@', '@'}};
     static const int _heigth = 4;
-    static const int _weight = 5;
+    static const int _width = 5;
 
     Character();
 public:
