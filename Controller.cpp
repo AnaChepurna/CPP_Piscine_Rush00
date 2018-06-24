@@ -40,7 +40,8 @@ void Controller::gameLoop() {
         if (userEvent == '\n' || userEvent == 27)
             break;
         controlCharacter();
-        if (rand()%3 / 2)
+        controlEnemies();
+        if (rand()%7 / 6)
             model->pushObject(model->getEnemyEvent()->getEnemy());
         usleep(40000);
     }
@@ -70,5 +71,17 @@ void Controller::controlCharacter() {
             if (character->getY() < viewer->getWinHeight() - character->getHeight() - 1)
                 character->move_v(1);
             break;
+    }
+}
+
+void Controller::controlEnemies() {
+    Object *ptr;
+    while ((ptr = model->getNext()) != NULL)
+    {
+        if (ptr->getType() == "enemy") {
+            ptr->move_v(1);
+            if (ptr->getY() > viewer->getWinHeight())
+                model->deleteObject(ptr);
+        }
     }
 }

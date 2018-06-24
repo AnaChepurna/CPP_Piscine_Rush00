@@ -76,7 +76,7 @@ void Model::deleteObject(Object const *c) {
             if (curr->obj == c)
             {
                 teil = curr->next;
-                delete curr->obj;
+                //delete curr->obj;
                 delete curr;
                 buf->next = teil;
                 return;

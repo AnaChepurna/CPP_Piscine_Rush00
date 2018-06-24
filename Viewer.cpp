@@ -84,7 +84,6 @@ void Viewer::showObjects() {
     Object *obj;
     int height;
     clear();
-    box(wnd, 0,0);
     while ((obj = model->getNext()) != NULL)
     {
         height = obj->getHeight();
@@ -94,6 +93,7 @@ void Viewer::showObjects() {
             mvwprintw(wnd, obj->getY() + i, obj->getX(), map[i]);
         }
     }
+    box(wnd, 0,0);
     refresh();
     controller->setUserEvent(wgetch(wnd));
 }

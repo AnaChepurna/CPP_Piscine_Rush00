@@ -25,6 +25,7 @@ public:
     void setUserEvent(int event);
 
     void controlCharacter();
+    void controlEnemies();
 };
 
 
