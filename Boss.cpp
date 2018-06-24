@@ -27,6 +27,7 @@ Boss :: Boss( int x, int y) : Object(x, y)
     width = _width;
     type = boss_t;
     hp = boss_hp;
+    this->bul = 6;
 }
 
 Boss :: Boss(Boss const &src)
@@ -49,3 +50,17 @@ Boss &Boss::operator=(Boss const &src) {
     this->y = src.y;
     return (*this);
 }
+
+Bullet* Boss :: attack()
+{
+    if (!this->bul)
+        return (NULL);
+    this->bul--;
+    return (new Bullet( this->x + this->width / 2, this->y));
+}
+
+void    Boss :: resetBul()
+{
+    this->bul++;
+}
+

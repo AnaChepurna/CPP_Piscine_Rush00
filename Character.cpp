@@ -30,6 +30,7 @@ Character::Character(int x, int y) {
     hp = hero_hp;
     this->x = x;
     this->y = y;
+    this->bul = 4;
    // printf("character\n");
 }
 
@@ -50,4 +51,17 @@ Character::~Character() {
     for (int i = 0; i < height; i++)
         delete [] map[i];
     delete [] map;
+}
+
+Bullet* Character :: attack()
+{
+    if (!this->bul)
+        return (NULL);
+    this->bul--;
+    return (new Bullet( this->x + this->width / 2, this->y));
+}
+
+void    Character :: resetBul()
+{
+    this->bul++;
 }
