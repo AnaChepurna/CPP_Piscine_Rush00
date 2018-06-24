@@ -12,16 +12,28 @@ protected:
     int height;
     int x;
     int y;
+public:
+    Object();
+    Object(int x, int y);
+    Object(Object const & obj);
+    Object &operator=(Object const & obj);
+
+    ~Object();
+    int     getWidth();
+    int     getheight();
+    int     getX();
+    int     getY();
+    virtual void    move_v(int pos);
+    virtual void    move_h(int pos);
 };
 
 class OList {
-private:
-    destroy();
 public:
     Object * obj;
     OList * next;
 
     OList();
+    OList(Object *obj);
     OList(OList const& src);
     OList &operator=(OList const& src);
 
