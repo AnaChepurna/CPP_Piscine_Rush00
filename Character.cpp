@@ -5,15 +5,16 @@
 #include "Character.h"
 
 char const Character::_map[4][5] = {{'.', '.', '@', '.', '.'},
-                         {'.', '@', '@', '@', '.'},
-                         {'@', '@', '@', '@', '@'},
-                         {'@', '@', '@', '@', '@'}};
+                                    {'.', '@', '@', '@', '.'},
+                                    {'@', '@', '@', '@', '@'},
+                                    {'@', '@', '@', '@', '@'}};
 const std :: string Character::hero_t = "hero";
 
 Character::Character(): Object() {
 }
 
-Character::Character(int x, int y): Object(x, y) {
+Character::Character(int x, int y) {
+   // printf("character\n");
     map = new char *[_heigth];
     for (int i = 0; i < _heigth; i++)
     {
@@ -27,6 +28,9 @@ Character::Character(int x, int y): Object(x, y) {
     width = _width;
     type = hero_t;
     hp = hero_hp;
+    this->x = x;
+    this->y = y;
+   // printf("character\n");
 }
 
 Character::Character(Character const &src) {

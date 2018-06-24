@@ -41,7 +41,7 @@ Enemy :: ~Enemy()
     delete [] map;
 }
 
-Enemy &Enemy::operator=(Enemy &src) {
+Enemy &Enemy::operator=(Enemy const &src) {
     this->map = src.map;
     this->height = src.height;
     this->width = src.height;

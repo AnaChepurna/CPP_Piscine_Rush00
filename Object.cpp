@@ -6,16 +6,19 @@
 #include "Object.h"
 
 OList :: OList(): obj(NULL), next(NULL) {
+  //  printf("list1\n");
 	return ;
 }
 
 OList :: OList(OList const& src)
 {
+  //   printf("list2\n");
 	*this = src;
 }
 
 OList :: OList(Object *obj)
 {
+   // printf("list3\n");
 	this->obj = obj;
 	this->next = NULL;
 }
@@ -42,6 +45,7 @@ Object :: Object()
 
 Object :: Object(int x, int y): x(x), y(y)
 {
+  //  printf("object\n");
 	return ;
 }
 

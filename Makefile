@@ -6,7 +6,8 @@ SRC		=   main.cpp \
             Viewer.cpp \
             Character.cpp \
             Enemy.cpp \
-            Boss.cpp
+            Boss.cpp \
+            Object.cpp
 NAME	= ft_retro
 OBJ		= $(SRC:.cpp=.o)
 

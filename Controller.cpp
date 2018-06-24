@@ -7,9 +7,9 @@
 #include "Viewer.h"
 
 Controller::Controller() {
-    model = new Model(this);
+    printf("controller\n");
     viewer = new Viewer(this);
-    model->setViewer(viewer);
+    model = new Model(this, viewer);
     viewer->setModel(model);
 }
 
@@ -29,5 +29,7 @@ Controller::~Controller() {
 }
 
 void Controller::startGame() {
-    viewer->showPreviw();
+  //  printf("start\n");
+    //viewer->showPreviw();
+    viewer->showObjects();
 }

@@ -9,9 +9,10 @@ Model::Model(): controller(NULL), viewer(NULL), character(NULL),
    list(NULL), ptr(list){
 }
 
-Model::Model(Controller *controller): controller(controller), viewer(NULL),
+Model::Model(Controller *controller, Viewer *viewer): controller(controller), viewer(viewer),
    character(new Character(viewer->getWinWidth()/2, viewer->getWinHeight() - 10)),
    list(new OList(character)), ptr(list) {
+  //  printf("model\n");
 }
 
 Model::Model(Model const &src) {

@@ -26,7 +26,9 @@ Viewer::Viewer(Controller *controller): controller(controller), model(NULL), wnd
     curs_set(0);
     clear();
     refresh();
+    nodelay(wnd, true);
     box(wnd, 0,0);
+  //  printf("viewer\n");
 }
 
 Viewer::Viewer(Viewer const &src) {
@@ -56,9 +58,9 @@ void Viewer::showPreviw() {
     int c;
     while (c != '\n' && c != 27)
         c = wgetch(wnd);
-    c = 0;
-    while (c != '\n' && c != 27)
-        c = wgetch(wnd);
+//    c = 0;
+//    while (c != '\n' && c != 27)
+//        c = wgetch(wnd);
 }
 
 int Viewer::getWinHeight() {
@@ -74,11 +76,17 @@ void Viewer::showObjects() {
     int height;
     while ((obj = model->getNext()) != NULL)
     {
+        printf(obj->getType().data());
         height = obj->getHeight();
         char **map = obj->getMap();
-        for (int i = 0; i < height; i++)
-            mvwprintw(wnd, win_x, win_y, map[i]);
+        for (int i = 0; i < height; i++) {
+            printf(map[i]);
+            mvwprintw(wnd, obj->getX(), obj->getY() + i, map[i]);
+        }
     }
+    int c;
+    while (c != '\n' && c != 27)
+        c = wgetch(wnd);
 }
 
 

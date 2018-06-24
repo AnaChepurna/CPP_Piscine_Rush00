@@ -24,7 +24,7 @@ private:
 
     Model();
 public:
-    Model(Controller * controller);
+    Model(Controller * controller, Viewer *viewer);
     Model(Model const& src);
     Model &operator=(Model const &src);
     ~Model();
