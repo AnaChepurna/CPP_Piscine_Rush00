@@ -7,6 +7,7 @@
 
 
 #include "Object.h"
+#include "Bullet.hpp"
 
 class Character: public Object {
 private:
@@ -16,12 +17,15 @@ private:
     static const int hero_hp = 3;
     static const std :: string hero_t;
     static const int _color = 1;
+    int bul;
     Character();
 public:
     Character(int x, int y);
     Character(Character const &src);
     Character &operator=(Character const &src);
     ~Character();
+    Bullet* attack();
+    void    resetBul();
 };
 
 
