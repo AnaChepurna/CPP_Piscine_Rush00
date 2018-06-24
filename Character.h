@@ -10,9 +10,9 @@
 
 class Character: public Object {
 private:
-    static char const _map[4][5];
+    static char const _map[4][6];
     static const int _heigth = 4;
-    static const int _width = 5;
+    static const int _width = 6;
     static const int hero_hp = 3;
     static const std :: string hero_t;
     Character();
