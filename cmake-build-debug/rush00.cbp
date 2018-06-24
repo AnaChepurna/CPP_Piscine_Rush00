@@ -92,6 +92,12 @@
 		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Model.h">
 			<Option target="main.cpp"/>
 		</Unit>
+		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Object.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Object.h">
+			<Option target="main.cpp"/>
+		</Unit>
 		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Viewer.cpp">
 			<Option target="main.cpp"/>
 		</Unit>

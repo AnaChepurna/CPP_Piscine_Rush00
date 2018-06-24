@@ -177,6 +177,33 @@ Model.cpp.s:
 	$(MAKE) -f CMakeFiles/main.cpp.dir/build.make CMakeFiles/main.cpp.dir/Model.cpp.s
 .PHONY : Model.cpp.s
 
+Object.o: Object.cpp.o
+
+.PHONY : Object.o
+
+# target to build an object file
+Object.cpp.o:
+	$(MAKE) -f CMakeFiles/main.cpp.dir/build.make CMakeFiles/main.cpp.dir/Object.cpp.o
+.PHONY : Object.cpp.o
+
+Object.i: Object.cpp.i
+
+.PHONY : Object.i
+
+# target to preprocess a source file
+Object.cpp.i:
+	$(MAKE) -f CMakeFiles/main.cpp.dir/build.make CMakeFiles/main.cpp.dir/Object.cpp.i
+.PHONY : Object.cpp.i
+
+Object.s: Object.cpp.s
+
+.PHONY : Object.s
+
+# target to generate assembly for a file
+Object.cpp.s:
+	$(MAKE) -f CMakeFiles/main.cpp.dir/build.make CMakeFiles/main.cpp.dir/Object.cpp.s
+.PHONY : Object.cpp.s
+
 Viewer.o: Viewer.cpp.o
 
 .PHONY : Viewer.o
@@ -246,6 +273,9 @@ help:
 	@echo "... Model.o"
 	@echo "... Model.i"
 	@echo "... Model.s"
+	@echo "... Object.o"
+	@echo "... Object.i"
+	@echo "... Object.s"
 	@echo "... Viewer.o"
 	@echo "... Viewer.i"
 	@echo "... Viewer.s"

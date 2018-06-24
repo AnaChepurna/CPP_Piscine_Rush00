@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Controller.cpp" "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/main.cpp.dir/Controller.cpp.o"
   "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Model.cpp" "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/main.cpp.dir/Model.cpp.o"
+  "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Object.cpp" "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/main.cpp.dir/Object.cpp.o"
   "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Viewer.cpp" "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/main.cpp.dir/Viewer.cpp.o"
   "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/main.cpp" "/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/cmake-build-debug/CMakeFiles/main.cpp.dir/main.cpp.o"
   )

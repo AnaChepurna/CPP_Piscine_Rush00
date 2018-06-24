@@ -50,7 +50,11 @@ void Viewer::setModel(Model *v) {
 
 void Viewer::showPreviw() {
     wprintw(wnd,  "Welcome to the game!");
+    refresh();
     int c;
+    while (c != '\n' && c != 27)
+        c = wgetch(wnd);
+    c = 0;
     while (c != '\n' && c != 27)
         c = wgetch(wnd);
 }

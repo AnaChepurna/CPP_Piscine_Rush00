@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.cpp.dir/Viewer.cpp.o"
   "CMakeFiles/main.cpp.dir/Model.cpp.o"
   "CMakeFiles/main.cpp.dir/main.cpp.o"
+  "CMakeFiles/main.cpp.dir/Object.cpp.o"
   "main.cpp.pdb"
   "main.cpp"
 )

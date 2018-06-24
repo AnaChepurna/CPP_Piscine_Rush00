@@ -9,20 +9,26 @@
 
 
 #include "Controller.h"
+#include "Object.h"
 
 class Model {
 private:
     Controller * controller;
     Viewer * viewer;
 
-    Model();
+    OList * list;
+    OList * ptr;
 
+    Model();
 public:
     Model(Controller * controller);
     Model(Model const& src);
     Model &operator=(Model const &src);
     ~Model();
     void setViewer(Viewer *v);
+    Object const *getNext();
+    void pushObject(Object const* o);
+    void deleteObject(Object const* c);
 };
 
 

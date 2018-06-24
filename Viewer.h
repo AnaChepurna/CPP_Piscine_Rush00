@@ -12,6 +12,7 @@ class Viewer {
 private:
     Controller * controller;
     Model * model;
+
     WINDOW*	wnd;
     int win_y;
     int win_x;
