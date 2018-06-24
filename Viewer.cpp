@@ -96,8 +96,10 @@ void Viewer::showObjects() {
     }
     refresh();
     int c;
-    while (c != '\n' && c != 27)
+    while (c != '\n' && c != 27) {
         c = wgetch(wnd);
+        mvwprintw(wnd, 0, 0, "%c", c);
+    }
 }
 
 

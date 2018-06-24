@@ -10,6 +10,7 @@ Controller::Controller() {
     viewer = new Viewer(this);
     model = new Model(this, viewer);
     viewer->setModel(model);
+    srand(time(0));
 }
 
 Controller::Controller(Controller const &src) {
