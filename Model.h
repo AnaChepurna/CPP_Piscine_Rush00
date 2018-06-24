@@ -16,6 +16,8 @@ private:
     Controller * controller;
     Viewer * viewer;
 
+    Character *character;
+
     OList * list;
     OList * ptr;
 

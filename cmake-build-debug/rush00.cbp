@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Character.cpp">
+			<Option target="main.cpp"/>
+		</Unit>
+		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Character.h">
+			<Option target="main.cpp"/>
+		</Unit>
 		<Unit filename="/Users/achepurn/CLionProjects/CPP_Piscine_Rush00/Controller.cpp">
 			<Option target="main.cpp"/>
 		</Unit>

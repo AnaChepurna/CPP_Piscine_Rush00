@@ -26,6 +26,8 @@ public:
     ~Viewer();
     void setModel(Model *v);
     void showPreviw();
+    int getWinHeight();
+    int getWinWidth();
 };
 
 

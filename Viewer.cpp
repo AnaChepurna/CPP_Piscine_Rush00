@@ -59,4 +59,12 @@ void Viewer::showPreviw() {
         c = wgetch(wnd);
 }
 
+int Viewer::getWinHeight() {
+    return (win_y);
+}
+
+int Viewer::getWinWidth() {
+    return (win_x);
+}
+
 
