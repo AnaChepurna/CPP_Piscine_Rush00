@@ -20,7 +20,7 @@ OList :: OList(Object *obj)
 	this->next = NULL;
 }
 
-OList :: ~List()
+OList :: ~OList()
 {
 	delete this->obj;	
 	this->obj = NULL;
@@ -32,7 +32,7 @@ OList &OList :: operator=(OList const& src)
 	// delete *this;
 	this->obj = src.obj;
 	this->next = src.next;
-	return(src);
+	return(*this);
 }
 
 Object :: Object() 
@@ -40,7 +40,7 @@ Object :: Object()
 	return ;
 }
 
-Object :: Object(int x, int y) : x(x), y(y)
+Object :: Object(int x, int y): x(x), y(y)
 {
 	return ;
 }

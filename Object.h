@@ -20,7 +20,7 @@ public:
 
     ~Object();
     int     getWidth();
-    int     getheight();
+    int     getHeight();
     int     getX();
     int     getY();
     virtual void    move_v(int pos);
