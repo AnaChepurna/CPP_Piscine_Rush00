@@ -4,10 +4,17 @@
 
 #include "Character.h"
 
+<<<<<<< HEAD
 char const Character::_map[4][5] = {{'.', '.', '@', '.', '.'},
                                     {'.', '@', '@', '@', '.'},
                                     {'@', '@', '@', '@', '@'},
                                     {'@', '@', '@', '@', '@'}};
+=======
+char const Character::_map[4][5] = {{'.', '.', '@', '.', '.', '\0'},
+                         {'.', '@', '@', '@', '.', '\0'},
+                         {'@', '@', '@', '@', '@', '\0'},
+                         {'@', '@', '@', '@', '@', '\0'}};
+>>>>>>> 164d5c5272115f4a4747647de197bb2dfa18bbc5
 const std :: string Character::hero_t = "hero";
 
 Character::Character(): Object() {
