@@ -15,6 +15,7 @@ private:
     static const int _width = 6;
     static const int hero_hp = 3;
     static const std :: string hero_t;
+    static const int _color = 1;
     Character();
 public:
     Character(int x, int y);

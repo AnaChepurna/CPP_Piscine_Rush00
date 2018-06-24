@@ -4,6 +4,7 @@
 
 #include "Model.h"
 #include "Viewer.h"
+#include "Enemy.hpp"
 
 Model::Model(): controller(NULL), viewer(NULL), character(NULL),
    list(NULL), ptr(list){
@@ -12,6 +13,8 @@ Model::Model(): controller(NULL), viewer(NULL), character(NULL),
 Model::Model(Controller *controller, Viewer *viewer): controller(controller), viewer(viewer),
    character(new Character(viewer->getWinWidth()/2, viewer->getWinHeight() - 10)),
    list(new OList(character)), ptr(list) {
+    Enemy *enemy = new Enemy(4, 10);
+    pushObject(enemy);
   //  printf("model\n");
 }
 

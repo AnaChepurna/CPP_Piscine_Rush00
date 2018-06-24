@@ -7,7 +7,6 @@
 #include "Viewer.h"
 
 Controller::Controller() {
-    printf("controller\n");
     viewer = new Viewer(this);
     model = new Model(this, viewer);
     viewer->setModel(model);
@@ -30,6 +29,6 @@ Controller::~Controller() {
 
 void Controller::startGame() {
   //  printf("start\n");
-    //viewer->showPreviw();
+    viewer->showPreviw();
     viewer->showObjects();
 }

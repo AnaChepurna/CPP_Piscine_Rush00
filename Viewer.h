@@ -7,6 +7,7 @@
 
 #include <ncurses.h>
 #include "Controller.h"
+#include "Object.h"
 
 class Viewer {
 private:
@@ -18,7 +19,7 @@ private:
     int win_x;
 
     Viewer();
-
+    void getObjectColor(Object *object);
 public:
     Viewer(Controller * controller);
     Viewer(Viewer const& src);

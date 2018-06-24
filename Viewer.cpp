@@ -14,7 +14,7 @@ Viewer::Viewer(): controller(NULL), model(NULL), wnd(initscr()) {
     keypad(wnd, true);
     curs_set(0);
     clear();
-    refresh();
+    nodelay(wnd, true);
     box(wnd, 0,0);
 }
 
@@ -25,9 +25,12 @@ Viewer::Viewer(Controller *controller): controller(controller), model(NULL), wnd
     keypad(wnd, true);
     curs_set(0);
     clear();
-    refresh();
     nodelay(wnd, true);
     box(wnd, 0,0);
+    start_color();
+
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_GREEN, COLOR_BLACK);
   //  printf("viewer\n");
 }
 
@@ -58,9 +61,6 @@ void Viewer::showPreviw() {
     int c;
     while (c != '\n' && c != 27)
         c = wgetch(wnd);
-//    c = 0;
-//    while (c != '\n' && c != 27)
-//        c = wgetch(wnd);
 }
 
 int Viewer::getWinHeight() {
@@ -71,19 +71,30 @@ int Viewer::getWinWidth() {
     return (win_x);
 }
 
+void Viewer::getObjectColor(Object * object)
+{
+    if (object->getType() == "hero")
+        attron(COLOR_PAIR(1));
+    else
+        attron(COLOR_PAIR(2));
+
+}
+
 void Viewer::showObjects() {
     Object *obj;
     int height;
+    clear();
+    box(wnd, 0,0);
     while ((obj = model->getNext()) != NULL)
     {
-        printf(obj->getType().data());
         height = obj->getHeight();
+        getObjectColor(obj);
         char **map = obj->getMap();
         for (int i = 0; i < height; i++) {
-            printf(map[i]);
-            mvwprintw(wnd, obj->getX(), obj->getY() + i, map[i]);
+            mvwprintw(wnd, obj->getY() + i, obj->getX(), map[i]);
         }
     }
+    refresh();
     int c;
     while (c != '\n' && c != 27)
         c = wgetch(wnd);

@@ -118,3 +118,4 @@ void	Object::setHP(int const & hp)
 {
 	this->hp = hp;
 }
+
