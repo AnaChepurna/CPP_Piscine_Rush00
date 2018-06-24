@@ -18,6 +18,8 @@ Enemy :: Enemy( int x, int y) : Object(x, y)
     }
     height = _heigth;
     width = _width;
+    hp = enemy_hp;
+    type = enemy_t;
 }
 
 Enemy :: Enemy(Enemy const &src)

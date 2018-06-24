@@ -19,6 +19,8 @@ Character::Character(int x, int y): Object(x, y) {
     }
     height = _heigth;
     width = _width;
+    type = hero_t;
+    hp = hero_hp;
 }
 
 Character::Character(Character const &src) {

@@ -16,7 +16,8 @@ private:
                                     {'@', '@', '@', '@', '@'}};
     static const int _heigth = 4;
     static const int _width = 5;
-
+    static const int hero_hp = 3;
+    static const std :: string hero_t = "hero";
     Character();
 public:
     Character(int x, int y);
