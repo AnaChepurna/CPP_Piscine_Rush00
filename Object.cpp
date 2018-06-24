@@ -119,3 +119,8 @@ void	Object::setHP(int const & hp)
 	this->hp = hp;
 }
 
+void	 	Object :: takeDamage(Object &src)
+{
+	this->hp--;
+	src.hp--;
+}

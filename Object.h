@@ -33,6 +33,7 @@ public:
     int    getHP();
     void    setHP(int const &hp);
     char ** getMap();
+    void    takeDamage(Object &src);
 };
 
 class OList {
