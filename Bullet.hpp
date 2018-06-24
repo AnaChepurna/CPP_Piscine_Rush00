@@ -5,9 +5,9 @@
 
 class Bullet: public Object {
 private:
-    static char const _map[1][1];
+    static char const _map[1][2];
     static const int _heigth = 1;
-    static const int _width = 1;
+    static const int _width = 2;
     static const int bul_hp = 1;
     static std :: string bul_t;
 

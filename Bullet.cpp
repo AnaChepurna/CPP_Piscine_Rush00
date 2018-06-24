@@ -1,6 +1,6 @@
 #include "Bullet.hpp"
 
-char const Bullet :: _map[1][1] = {{'-'}};
+char const Bullet :: _map[1][2] = {{'-', '\0'}};
 std :: string Bullet :: bul_t = "bullet";
 
 Bullet::Bullet(): Object() {
