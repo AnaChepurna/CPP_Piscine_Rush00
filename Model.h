@@ -29,7 +29,7 @@ public:
     Model &operator=(Model const &src);
     ~Model();
     void setViewer(Viewer *v);
-    Object const *getNext();
+    Object *getNext();
     void pushObject(Object * o);
     void deleteObject(Object const* c);
     Character const * getCharacter();

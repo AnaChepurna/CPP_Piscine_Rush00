@@ -22,7 +22,7 @@ public:
     Object(Object const & obj);
     Object &operator=(Object const & obj);
 
-    ~Object();
+    virtual ~Object();
     int     getWidth();
     int     getHeight();
     int     getX();
@@ -32,6 +32,7 @@ public:
     std::string const getType();
     int    getHP();
     void    setHP(int const &hp);
+    char ** getMap();
 };
 
 class OList {

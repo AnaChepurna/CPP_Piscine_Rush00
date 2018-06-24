@@ -4,6 +4,12 @@
 
 #include "Character.h"
 
+char const Character::_map[4][5] = {{'.', '.', '@', '.', '.'},
+                         {'.', '@', '@', '@', '.'},
+                         {'@', '@', '@', '@', '@'},
+                         {'@', '@', '@', '@', '@'}};
+const std :: string Character::hero_t = "hero";
+
 Character::Character(): Object() {
 }
 
@@ -27,7 +33,7 @@ Character::Character(Character const &src) {
     *this = src;
 }
 
-Character &Character::operator=(Character &src) {
+Character & Character::operator=(Character const &src) {
     this->map = src.map;
     this->height = src.height;
     this->width = src.height;

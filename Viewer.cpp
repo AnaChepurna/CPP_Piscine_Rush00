@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include "Viewer.h"
+#include "Object.h"
+#include "Model.h"
 
 Viewer::Viewer(): controller(NULL), model(NULL), wnd(initscr()) {
     getmaxyx(wnd, win_y, win_x);
@@ -49,7 +51,7 @@ void Viewer::setModel(Model *v) {
 }
 
 void Viewer::showPreviw() {
-    wprintw(wnd,  "Welcome to the game!");
+    mvwprintw(wnd, win_x / 2, win_y / 2 - 10, "Welcome to the game!");
     refresh();
     int c;
     while (c != '\n' && c != 27)
@@ -65,6 +67,18 @@ int Viewer::getWinHeight() {
 
 int Viewer::getWinWidth() {
     return (win_x);
+}
+
+void Viewer::showObjects() {
+    Object *obj;
+    int height;
+    while ((obj = model->getNext()) != NULL)
+    {
+        height = obj->getHeight();
+        char **map = obj->getMap();
+        for (int i = 0; i < height; i++)
+            mvwprintw(wnd, win_x, win_y, map[i]);
+    }
 }
 
 

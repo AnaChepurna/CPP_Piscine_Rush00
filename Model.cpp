@@ -36,7 +36,7 @@ void Model::setViewer(Viewer *v) {
     this->viewer = v;
 }
 
-Object const *Model::getNext() {
+Object *Model::getNext() {
     Object * ret;
     if (ptr == NULL) {
         ret = NULL;

@@ -3,7 +3,10 @@ CFLAGS	= -Wall -Wextra -Werror
 SRC		=   main.cpp \
             Controller.cpp \
             Model.cpp \
-            Viewer.cpp
+            Viewer.cpp \
+            Character.cpp \
+            Enemy.cpp \
+            Boss.cpp
 NAME	= ft_retro
 OBJ		= $(SRC:.cpp=.o)
 

@@ -101,12 +101,16 @@ std::string const Object::getType() {
 	return (type);
 }
 
-int		getHP()
+char **Object::getMap() {
+    return (map);
+}
+
+int		Object::getHP()
 {
 	return (this->hp);
 }
 
-void	setHP(int const & hp)
+void	Object::setHP(int const & hp)
 {
 	this->hp = hp;
 }

@@ -28,6 +28,7 @@ public:
     void showPreviw();
     int getWinHeight();
     int getWinWidth();
+    void showObjects();
 };
 
 
