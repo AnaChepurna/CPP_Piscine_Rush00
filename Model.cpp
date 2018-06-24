@@ -4,7 +4,6 @@
 
 #include "Model.h"
 #include "Viewer.h"
-#include "Enemy.hpp"
 
 Model::Model(): controller(NULL), viewer(NULL), character(NULL),
    list(NULL), ptr(list){
@@ -12,10 +11,9 @@ Model::Model(): controller(NULL), viewer(NULL), character(NULL),
 
 Model::Model(Controller *controller, Viewer *viewer): controller(controller), viewer(viewer),
    character(new Character(viewer->getWinWidth()/2, viewer->getWinHeight() - 10)),
-   list(new OList(character)), ptr(list) {
+   list(new OList(character)), ptr(list), enemyEvent(new EnemyEvent(viewer->getWinWidth())) {
     Enemy *enemy = new Enemy(4, 10);
     pushObject(enemy);
-  //  printf("model\n");
 }
 
 Model::Model(Model const &src) {
@@ -78,7 +76,7 @@ void Model::deleteObject(Object const *c) {
             if (curr->obj == c)
             {
                 teil = curr->next;
-                delete curr->obj;
+                //delete curr->obj;
                 delete curr;
                 buf->next = teil;
                 return;
@@ -89,8 +87,12 @@ void Model::deleteObject(Object const *c) {
     }
 }
 
-Character const *Model::getCharacter() {
+Character *Model::getCharacter() {
     return (character);
+}
+
+EnemyEvent *Model::getEnemyEvent() {
+    return enemyEvent;
 }
 
 

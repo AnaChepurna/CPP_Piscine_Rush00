@@ -28,10 +28,8 @@ EnemyEvent :: ~EnemyEvent()
 
 Enemy* EnemyEvent :: getEnemy()
 {
-	Enemy *res = new Enemy(rand() % this->width, 0);
-	if (res->getX() < res->getWidth())
-		res->move_h(res->getWidth() - res->getX());
-	else if(res->getX() + res->getWidth() > this->width)
-		res->move_h(res->getWidth() * -1);
+	Enemy *res = new Enemy(rand() % this->width + 1, 1);
+	if(res->getX() + res->getWidth() > this->width)
+		res->move_h((res->getWidth() + 1) * -1);
 	return (res);
 }

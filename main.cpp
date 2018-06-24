@@ -8,4 +8,5 @@ int main()
 {
     Controller controller;
     controller.startGame();
+    controller.gameLoop();
 }

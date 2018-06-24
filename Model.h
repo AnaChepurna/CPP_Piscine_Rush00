@@ -11,6 +11,7 @@
 #include "Controller.h"
 #include "Object.h"
 #include "Character.h"
+#include "EnemyEvent.hpp"
 
 class Model {
 private:
@@ -22,6 +23,7 @@ private:
     OList * list;
     OList * ptr;
 
+    EnemyEvent * enemyEvent;
     Model();
 public:
     Model(Controller * controller, Viewer *viewer);
@@ -32,7 +34,8 @@ public:
     Object *getNext();
     void pushObject(Object * o);
     void deleteObject(Object const* c);
-    Character const * getCharacter();
+    Character * getCharacter();
+    EnemyEvent * getEnemyEvent();
 };
 
 
