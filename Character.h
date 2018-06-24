@@ -9,8 +9,20 @@
 #include "Object.h"
 
 class Character: public Object {
+private:
+    static char const _map[4][5] = {{'.', '.', '@', '.', '.'},
+                                    {'.', '@', '@', '@', '.'},
+                                    {'@', '@', '@', '@', '@'},
+                                    {'@', '@', '@', '@', '@'}};
+    static const int _heigth = 4;
+    static const int _weight = 5;
+
+    Character();
 public:
-    
+    Character(int x, int y);
+    Character(Character const &src);
+    Character &operator=(Character &src);
+    ~Character();
 };
 
 
