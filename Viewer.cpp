@@ -56,11 +56,42 @@ void Viewer::setModel(Model *v) {
 }
 
 void Viewer::showPreviw() {
-    mvwprintw(wnd, win_x / 2, win_y / 2, "Welcome to the game!");
+    mvwprintw(wnd, win_y / 4, win_x / 4, "                 Welcome to the game!");
+    mvwprintw(wnd, win_y / 4 + 1, win_x / 4 , "            |       |       |       |       |");
+    mvwprintw(wnd, win_y / 4 + 2, win_x / 4, "             \\       \\      |      /       / ");
+    mvwprintw(wnd, win_y / 4 + 3, win_x / 4, "               \\       \\    |     /      / ");
+    mvwprintw(wnd, win_y / 4 + 4, win_x / 4 , "                 \\       \\  |    /     /     ");
+    mvwprintw(wnd, win_y / 4 + 5, win_x / 4 , "             _________________________________");
+    mvwprintw(wnd, win_y / 4 + 6, win_x / 4 , "            |                                 |");
+    mvwprintw(wnd, win_y / 4 + 7, win_x / 4 , "            |                                 |");
+    mvwprintw(wnd, win_y / 4 + 8, win_x / 4, "            |_________________________________|");
+    mvwprintw(wnd, win_y / 4 + 9, win_x / 4, "            |    _  _  _  _   _      ___      |");
+    mvwprintw(wnd, win_y / 4 + 10, win_x / 4, "            |   |_)|_)|_ |_  |_         |     |");
+    mvwprintw(wnd, win_y / 4 + 11, win_x / 4, "            |   |  |\\_|_  _|  _|    /___|     |");
+    mvwprintw(wnd, win_y / 4 + 12, win_x / 4, "            |                       \\         |");
+    mvwprintw(wnd, win_y / 4 + 13, win_x / 4, "            |_________________________________|");
+    mvwprintw(wnd, win_y / 4 + 14, win_x / 4, "                                               ");
+    mvwprintw(wnd, win_y / 4 + 15, win_x / 4, "1. The main target to survive and get the highest score!");
+    mvwprintw(wnd, win_y / 4 + 16, win_x / 4 , "2. Up, down, right, left - to move your spaceship! Space - to atttack!");
+    mvwprintw(wnd, win_y / 4 + 17, win_x / 4, "3. Have fun and don't be NERD via EVALUATION!");
     refresh();
     int c;
     while (c != '\n' && c != 27)
         c = wgetch(wnd);
+}
+
+void    Viewer :: showGameOver()
+{
+    mvwprintw(wnd, win_y / 3, win_x / 4, "|   |   | |     /\\  |       /\\     ---- |   |  | /  -----  |");
+    mvwprintw(wnd, win_y / 3 + 1, win_x / 4 , "|   |   | |__  |__| +      |__|   |____ |   |  |/  |       |");
+    mvwprintw(wnd, win_y / 3 + 2, win_x / 4, "|   |   | |  | |  | |      |  |   |     |   |  |\\  |       |");
+    mvwprintw(wnd, win_y / 3 + 3, win_x / 4, "\\___|___/ |  | |  | |      |  |   |      \\_/   | \\  \\____  o");
+    mvwprintw(wnd, win_y / 3 + 4, win_x / 4 , "                                                 ");
+    mvwprintw(wnd, win_y / 3 + 5, win_x / 4 , "                 TRY AGAIN,SOFT BALLS!");
+    refresh();
+    int c;
+    while (c != '\n' && c != 27)
+        c = wgetch(wnd); 
 }
 
 int Viewer::getWinHeight() {
