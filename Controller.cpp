@@ -40,6 +40,8 @@ void Controller::gameLoop() {
         if (userEvent == '\n' || userEvent == 27)
             break;
         controlCharacter();
+        if (rand()%3 / 2)
+            model->pushObject(model->getEnemyEvent()->getEnemy());
         usleep(40000);
     }
 }

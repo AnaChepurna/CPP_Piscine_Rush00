@@ -7,7 +7,8 @@ SRC		=   main.cpp \
             Character.cpp \
             Enemy.cpp \
             Boss.cpp \
-            Object.cpp
+            Object.cpp \
+            EnemyEvent.cpp
 NAME	= ft_retro
 OBJ		= $(SRC:.cpp=.o)
 
