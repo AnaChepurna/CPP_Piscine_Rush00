@@ -50,6 +50,8 @@ void Controller::gameLoop() {
         clearDeadBodes();
         usleep(40000);
     }
+    if (gameOver)
+        viewer->showGameOver();
 }
 
 void Controller::setUserEvent(int e) {
@@ -101,7 +103,6 @@ void Controller::handleClash() {
         && (character->getY() + character->getHeight() >= ptr->getY() && character->getX() + character->getWidth() >= ptr->getX()))
             character->takeDamage(*ptr);
     }
-    std::cerr << "no" << std::endl;
 }
 
 void Controller::clearDeadBodes() {
@@ -112,9 +113,7 @@ void Controller::clearDeadBodes() {
     Object *ptr;
     while ((ptr = model->getNext()) != NULL)
         if (ptr->getHP() <= 0)
-        {
             model->deleteObject(ptr);
-        }
 }
 
 void Controller::endGame() {
