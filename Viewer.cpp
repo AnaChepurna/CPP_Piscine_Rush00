@@ -56,7 +56,7 @@ void Viewer::setModel(Model *v) {
 }
 
 void Viewer::showPreviw() {
-    mvwprintw(wnd, win_x / 2, win_y / 2 - 10, "Welcome to the game!");
+    mvwprintw(wnd, win_x / 2, win_y / 2, "Welcome to the game!");
     refresh();
     int c;
     while (c != '\n' && c != 27)
