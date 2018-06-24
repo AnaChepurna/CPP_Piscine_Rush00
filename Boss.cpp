@@ -1,5 +1,12 @@
 #include "Boss.hpp"
 
+char const Boss ::  _map[6][6] =    {{'-', '-', '/', '\\', '-', '-'},
+                                    {'-', '/', '#', '#', '\\', '-'},
+                                    {'=', '=', '=', '=', '=', '='},
+                                    {'-', '\\', '#', '#', '/', '-'},
+                                    {'-', '-', '\\', '/', '-', '-'}};
+const std :: string Boss :: boss_t = "boss";        
+
 Boss :: Boss ()
 {
 	return ;
@@ -34,7 +41,7 @@ Boss :: ~Boss()
     delete [] map;
 }
 
-Boss &Boss::operator=(Boss &src) {
+Boss &Boss::operator=(Boss const &src) {
     this->map = src.map;
     this->height = src.height;
     this->width = src.height;
