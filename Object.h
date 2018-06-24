@@ -15,6 +15,7 @@ protected:
     int x;
     int y;
     std::string type;
+    int         hp;
 public:
     Object();
     Object(int x, int y);
@@ -29,6 +30,8 @@ public:
     virtual void    move_v(int pos);
     virtual void    move_h(int pos);
     std::string const getType();
+    int    getHP();
+    void    setHP(int const &hp);
 };
 
 class OList {

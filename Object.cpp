@@ -57,6 +57,8 @@ Object &Object :: operator=(Object const & obj)
 	this->height = obj.height;
 	this->x = obj.x;
 	this->y = obj.y;
+	this->type = obj.type;
+	this->hp = obj.hp;
 	return (*this);	
 }
 
@@ -97,4 +99,14 @@ void 	Object :: move_h(int pos)
 
 std::string const Object::getType() {
 	return (type);
+}
+
+int		getHP()
+{
+	return (this->hp);
+}
+
+void	setHP(int const & hp)
+{
+	this->hp = hp;
 }
