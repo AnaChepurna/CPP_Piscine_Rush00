@@ -4,11 +4,12 @@
 
 #include "Model.h"
 
-Model::Model(): controller(NULL), viewer(NULL), list(NULL), ptr(list) {
+Model::Model(): controller(NULL), viewer(NULL), character(new Character),
+   list(NULL), ptr(list){
 }
 
 Model::Model(Controller *controller): controller(controller), viewer(NULL),
-   list(NULL), ptr(list) {
+   character(new Character), list(NULL), ptr(list) {
 }
 
 Model::Model(Model const &src) {
@@ -18,13 +19,15 @@ Model::Model(Model const &src) {
 Model &Model::operator=(Model const &src) {
     this->controller = src.controller;
     this->viewer = src.viewer;
+    this->character = src.character;
     this->list = src.list;
     this->ptr = src.ptr;
+
     return (*this);
 }
 
 Model::~Model() {
-
+    delete character;
 }
 
 void Model::setViewer(Viewer *v) {
@@ -42,6 +45,46 @@ Object const *Model::getNext() {
         ptr = ptr->next;
     }
     return (ret);
+}
+
+void Model::pushObject(Object const *o) {
+    OList *curr;
+    curr = list;
+    while (curr->next != NULL)
+        curr = curr->next;
+    curr->next = new OList(o);
+}
+
+void Model::deleteObject(Object const *c) {
+    OList *buf;
+    if (list->obj == c) {
+        buf = list->next;
+        delete list->obj;
+        delete list;
+        list = buf;
+    }
+    else {
+        OList *curr;
+        OList *teil;
+        buf = list;
+        curr = list->next;
+        while (curr != NULL) {
+            if (curr->obj == c)
+            {
+                teil = curr->next;
+                delete curr->obj;
+                delete curr;
+                buf->next = teil;
+                return;
+            }
+            buf = curr;
+            curr = curr->next;
+        }
+    }
+}
+
+Character const *Model::getCharacter() {
+    return (character);
 }
 
 

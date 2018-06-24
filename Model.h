@@ -10,6 +10,7 @@
 
 #include "Controller.h"
 #include "Object.h"
+#include "Character.h"
 
 class Model {
 private:
@@ -31,6 +32,7 @@ public:
     Object const *getNext();
     void pushObject(Object const* o);
     void deleteObject(Object const* c);
+    Character const * getCharacter();
 };
 
 
