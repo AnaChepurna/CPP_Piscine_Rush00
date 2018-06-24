@@ -7,7 +7,7 @@
 Character::Character(): Object() {
 }
 
-Character::Character(int x, int y): Object() {
+Character::Character(int x, int y): Object(x, y) {
     map = new char *[_heigth];
     for (int i = 0; i < _heigth; i++)
     {
@@ -22,9 +22,20 @@ Character::Character(int x, int y): Object() {
 }
 
 Character::Character(Character const &src) {
-
+    *this = src;
 }
 
 Character &Character::operator=(Character &src) {
-    return <#initializer#>;
+    this->map = src.map;
+    this->height = src.height;
+    this->width = src.height;
+    this->x = src.x;
+    this->y = src.y;
+    return (*this);
+}
+
+Character::~Character() {
+    for (int i = 0; i < height; i++)
+        delete [] map[i];
+    delete [] map;
 }

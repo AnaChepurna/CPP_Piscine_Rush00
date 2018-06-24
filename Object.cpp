@@ -94,3 +94,7 @@ void 	Object :: move_h(int pos)
 {
 	this->y += pos;
 }
+
+std::string const Object::getType() {
+	return (type);
+}

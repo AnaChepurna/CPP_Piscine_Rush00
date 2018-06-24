@@ -5,6 +5,8 @@
 #ifndef RUSH00_OBJECT_H
 #define RUSH00_OBJECT_H
 
+#include <string>
+
 class Object {
 protected:
     char **map;
@@ -12,6 +14,7 @@ protected:
     int height;
     int x;
     int y;
+    std::string type;
 public:
     Object();
     Object(int x, int y);
@@ -25,6 +28,7 @@ public:
     int     getY();
     virtual void    move_v(int pos);
     virtual void    move_h(int pos);
+    std::string const getType();
 };
 
 class OList {
@@ -36,7 +40,6 @@ public:
     OList(Object *obj);
     OList(OList const& src);
     OList &operator=(OList const& src);
-
     ~OList();
 };
 #endif //RUSH00_OBJECT_H
