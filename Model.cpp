@@ -3,13 +3,15 @@
 //
 
 #include "Model.h"
+#include "Viewer.h"
 
-Model::Model(): controller(NULL), viewer(NULL), character(new Character),
+Model::Model(): controller(NULL), viewer(NULL), character(NULL),
    list(NULL), ptr(list){
 }
 
 Model::Model(Controller *controller): controller(controller), viewer(NULL),
-   character(new Character), list(NULL), ptr(list) {
+   character(new Character(viewer->getWinWidth()/2, viewer->getWinHeight() - 10)),
+   list(new OList(character)), ptr(list) {
 }
 
 Model::Model(Model const &src) {
@@ -47,7 +49,7 @@ Object const *Model::getNext() {
     return (ret);
 }
 
-void Model::pushObject(Object const *o) {
+void Model::pushObject(Object *o) {
     OList *curr;
     curr = list;
     while (curr->next != NULL)

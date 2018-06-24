@@ -30,7 +30,7 @@ public:
     ~Model();
     void setViewer(Viewer *v);
     Object const *getNext();
-    void pushObject(Object const* o);
+    void pushObject(Object * o);
     void deleteObject(Object const* c);
     Character const * getCharacter();
 };
