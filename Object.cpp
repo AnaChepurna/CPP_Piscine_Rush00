@@ -33,7 +33,7 @@ OList :: ~OList()
 OList &OList :: operator=(OList const& src)
 {
 	// delete *this;
-	this->obj = src.obj;
+	//this->obj = src.obj;
 	this->next = src.next;
 	return(*this);
 }
