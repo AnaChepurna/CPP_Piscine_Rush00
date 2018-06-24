@@ -1,5 +1,12 @@
 #include "Enemy.hpp"
 
+char const Enemy::_map[5][3] = {{'.', '@', '.'},
+                                {'/', '|', '\\'},
+                                {'_', '@', '_'},
+                                {'\\', '|', '/'},
+                                {'.', '@', '.'}};
+const std :: string Enemy::enemy_t = "enemy";
+
 Enemy :: Enemy ()
 {
 	return ;
