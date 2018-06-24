@@ -33,7 +33,7 @@ OList :: ~OList()
 OList &OList :: operator=(OList const& src)
 {
 	// delete *this;
-	//this->obj = src.obj;
+	this->obj = src.obj;
 	this->next = src.next;
 	return(*this);
 }
@@ -123,4 +123,11 @@ void	 	Object :: takeDamage(Object &src)
 {
 	this->hp--;
 	src.hp--;
+}
+
+void deleteLists(OList *first) {
+	if (first == NULL)
+		return;
+	deleteLists(first->next);
+	delete first;
 }

@@ -97,25 +97,23 @@ void Controller::handleClash() {
     character = model->getNext();
     while ((ptr = model->getNext()) != NULL)
     {
-        if (ptr->getY() <= character->getY() && ptr->getY() + ptr->getHeight() <= character->getY())
-            if ((ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX())
-                    || (ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX()))
-                character->takeDamage(*ptr);
-        if (ptr->getY() >= character->getY() && ptr->getY() + ptr->getHeight() >= character->getY())
-            if ((ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX())
-                || (ptr->getX() >= character->getY() && ptr->getX() + ptr->getWidth() >= character->getX()))
-                character->takeDamage(*ptr);
+        if ((character->getY() <= ptr->getY() + ptr->getHeight() && character->getX() <= ptr->getX() + ptr->getWidth())\
+        && (character->getY() + character->getHeight() >= ptr->getY() && character->getX() + character->getWidth() >= ptr->getX()))
+            character->takeDamage(*ptr);
     }
+    std::cerr << "no" << std::endl;
 }
 
 void Controller::clearDeadBodes() {
-    if (model->getCharacter()->getHP() <= 0)
+    if (model->getCharacter()->getHP() <= 0) {
         endGame();
+        return;
+    }
     Object *ptr;
     while ((ptr = model->getNext()) != NULL)
         if (ptr->getHP() <= 0)
         {
-
+            model->deleteObject(ptr);
         }
 }
 

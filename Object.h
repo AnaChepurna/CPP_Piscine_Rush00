@@ -47,4 +47,7 @@ public:
     OList &operator=(OList const& src);
     ~OList();
 };
+
+void deleteLists(OList *first);
+
 #endif //RUSH00_OBJECT_H

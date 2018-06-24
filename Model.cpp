@@ -63,7 +63,7 @@ void Model::deleteObject(Object const *c) {
     OList *buf;
     if (list->obj == c) {
         buf = list->next;
-        delete list->obj;
+        //delete list->obj;
         delete list;
         list = buf;
     }
